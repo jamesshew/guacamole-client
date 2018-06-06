@@ -22,11 +22,11 @@
 ## @fn build-guacamole.sh
 ##
 ## Builds Guacamole, saving "guacamole.war" and all applicable extension .jars
-## using the incubator-guacamole-client source contained within the given
-## directory. Extension files will be grouped by their associated type, with
-## all MySQL files being placed within the "mysql/" subdirectory of the
-## destination, all PostgreSQL files being placed within the "postgresql/"
-## subdirectory of the destination, etc.
+## using the guacamole-client source contained within the given directory.
+## Extension files will be grouped by their associated type, with all MySQL
+## files being placed within the "mysql/" subdirectory of the destination, all
+## PostgreSQL files being placed within the "postgresql/" subdirectory of the
+## destination, etc.
 ##
 ## @param BUILD_DIR
 ##     The directory which currently contains the guacamole-client source and
@@ -78,7 +78,7 @@ tar -xzf extensions/guacamole-auth-jdbc/modules/guacamole-auth-jdbc-dist/target/
 #
 
 echo "Downloading MySQL Connector/J ..."
-curl -L "http://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.35.tar.gz" | \
+curl -L "https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.46.tar.gz" | \
 tar -xz                        \
     -C "$DESTINATION/mysql/"   \
     --wildcards                \
