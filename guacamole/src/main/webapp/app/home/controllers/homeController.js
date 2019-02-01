@@ -70,7 +70,7 @@ angular.module('home').controller('homeController', ['$scope', '$injector',
      */
     $scope.isLoaded = function isLoaded() {
 
-        return $scope.rootConnectionGroup !== null;
+        return $scope.rootConnectionGroups !== null;
 
     };
 
@@ -127,6 +127,6 @@ angular.module('home').controller('homeController', ['$scope', '$injector',
     )
     .then(function rootGroupsRetrieved(rootConnectionGroups) {
         $scope.rootConnectionGroups = rootConnectionGroups;
-    }, requestService.WARN);
+    }, requestService.DIE);
 
 }]);

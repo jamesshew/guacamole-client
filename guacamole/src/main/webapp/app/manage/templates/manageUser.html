@@ -2,7 +2,7 @@
 <div class="manage-user view" ng-class="{loading: !isLoaded()}">
 
     <!-- User header and data source tabs -->
-    <div class="username header">
+    <div class="header tabbed">
         <h2>{{'MANAGE_USER.SECTION_HEADER_EDIT_USER' | translate}}</h2>
         <guac-user-menu></guac-user-menu>
     </div>
@@ -55,6 +55,17 @@
               permissions-added="permissionsAdded"
               permissions-removed="permissionsRemoved">
         </system-permission-editor>
+
+        <!-- Parent group section -->
+        <identifier-set-editor
+            header="MANAGE_USER.SECTION_HEADER_USER_GROUPS"
+            empty-placeholder="MANAGE_USER.HELP_NO_USER_GROUPS"
+            unavailable-placeholder="MANAGE_USER.INFO_NO_USER_GROUPS_AVAILABLE"
+            identifiers-available="availableGroups"
+            identifiers="parentGroups"
+            identifiers-added="parentGroupsAdded"
+            identifiers-removed="parentGroupsRemoved">
+        </identifier-set-editor>
 
         <!-- Connection permissions section -->
         <connection-permission-editor ng-show="managementPermissions[dataSource].canChangePermissions"

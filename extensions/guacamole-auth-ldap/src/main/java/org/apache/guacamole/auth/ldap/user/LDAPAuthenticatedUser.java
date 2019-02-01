@@ -20,6 +20,8 @@
 package org.apache.guacamole.auth.ldap.user;
 
 import com.google.inject.Inject;
+import java.util.Collections;
+import java.util.Map;
 import org.apache.guacamole.net.auth.AbstractAuthenticatedUser;
 import org.apache.guacamole.net.auth.AuthenticationProvider;
 import org.apache.guacamole.net.auth.Credentials;
@@ -28,7 +30,7 @@ import org.apache.guacamole.net.auth.Credentials;
  * An LDAP-specific implementation of AuthenticatedUser, associating a
  * particular set of credentials with the LDAP authentication provider.
  */
-public class AuthenticatedUser extends AbstractAuthenticatedUser {
+public class LDAPAuthenticatedUser extends AbstractAuthenticatedUser {
 
     /**
      * Reference to the authentication provider associated with this
@@ -43,14 +45,40 @@ public class AuthenticatedUser extends AbstractAuthenticatedUser {
     private Credentials credentials;
 
     /**
-     * Initializes this AuthenticatedUser using the given credentials.
+     * Name/value pairs to be applied as parameter tokens when connections
+     * are established using this AuthenticatedUser.
+     */
+    private Map<String, String> tokens;
+
+    /**
+     * Initializes this AuthenticatedUser using the given credentials and
+     * connection parameter tokens.
      *
      * @param credentials
      *     The credentials provided when this user was authenticated.
+     *
+     * @param tokens
+     *     A Map of all name/value pairs that should be applied as parameter
+     *     tokens when connections are established using the AuthenticatedUser.
      */
-    public void init(Credentials credentials) {
+    public void init(Credentials credentials, Map<String, String> tokens) {
         this.credentials = credentials;
+        this.tokens = Collections.unmodifiableMap(tokens);
         setIdentifier(credentials.getUsername());
+    }
+
+    /**
+     * Returns a Map of all name/value pairs that should be applied as
+     * parameter tokens when connections are established using this
+     * AuthenticatedUser.
+     *
+     * @return
+     *     A Map of all name/value pairs that should be applied as parameter
+     *     tokens when connections are established using this
+     *     AuthenticatedUser.
+     */
+    public Map<String, String> getTokens() {
+        return tokens;
     }
 
     @Override

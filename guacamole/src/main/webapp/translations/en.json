@@ -21,6 +21,7 @@
         "ACTION_MANAGE_SETTINGS"    : "Settings",
         "ACTION_MANAGE_SESSIONS"    : "Active Sessions",
         "ACTION_MANAGE_USERS"       : "Users",
+        "ACTION_MANAGE_USER_GROUPS" : "Groups",
         "ACTION_NAVIGATE_BACK"      : "Back",
         "ACTION_NAVIGATE_HOME"      : "Home",
         "ACTION_SAVE"               : "Save",
@@ -31,6 +32,7 @@
 
         "DIALOG_HEADER_ERROR" : "Error",
 
+        "ERROR_PAGE_UNAVAILABLE"  : "An error has occurred and this action cannot be completed. If the problem persists, please notify your system administrator or check your system logs.",
         "ERROR_PASSWORD_BLANK"    : "Your password cannot be blank.",
         "ERROR_PASSWORD_MISMATCH" : "The provided passwords do not match.",
         
@@ -94,7 +96,7 @@
 
         "ERROR_UPLOAD_100"     : "File transfer is either not supported or not enabled. Please contact your system administrator, or check your system logs.",
         "ERROR_UPLOAD_201"     : "Too many files are currently being transferred. Please wait for existing transfers to complete, and then try again.",
-        "ERROR_UPLOAD_202"     : "The file cannot be transferred because the remote desktop server is taking too long to respond. Please try again or or contact your system administrator.",
+        "ERROR_UPLOAD_202"     : "The file cannot be transferred because the remote desktop server is taking too long to respond. Please try again or contact your system administrator.",
         "ERROR_UPLOAD_203"     : "The remote desktop server encountered an error during transfer. Please try again or contact your system administrator.",
         "ERROR_UPLOAD_204"     : "The destination for the file transfer does not exist. Please check that the destination exists and try again.",
         "ERROR_UPLOAD_205"     : "The destination for the file transfer is currently locked. Please wait for any in-progress tasks to complete and try again.",
@@ -292,6 +294,7 @@
         "FIELD_HEADER_ADMINISTER_SYSTEM"             : "Administer system:",
         "FIELD_HEADER_CHANGE_OWN_PASSWORD"           : "Change own password:",
         "FIELD_HEADER_CREATE_NEW_USERS"              : "Create new users:",
+        "FIELD_HEADER_CREATE_NEW_USER_GROUPS"        : "Create new user groups:",
         "FIELD_HEADER_CREATE_NEW_CONNECTIONS"        : "Create new connections:",
         "FIELD_HEADER_CREATE_NEW_CONNECTION_GROUPS"  : "Create new connection groups:",
         "FIELD_HEADER_CREATE_NEW_SHARING_PROFILES"   : "Create new sharing profiles:",
@@ -301,13 +304,62 @@
 
         "FIELD_PLACEHOLDER_FILTER" : "@:APP.FIELD_PLACEHOLDER_FILTER",
 
-        "INFO_READ_ONLY" : "Sorry, but this user account cannot be edited.",
+        "HELP_NO_USER_GROUPS" : "This user does not currently belong to any groups. Expand this section to add groups.",
 
-        "SECTION_HEADER_CONNECTIONS" : "Connections",
-        "SECTION_HEADER_EDIT_USER"   : "Edit User",
-        "SECTION_HEADER_PERMISSIONS" : "Permissions",
+        "INFO_READ_ONLY"                : "Sorry, but this user account cannot be edited.",
+        "INFO_NO_USER_GROUPS_AVAILABLE" : "No groups available.",
+
+        "SECTION_HEADER_ALL_CONNECTIONS"     : "All Connections",
+        "SECTION_HEADER_CONNECTIONS"         : "Connections",
+        "SECTION_HEADER_CURRENT_CONNECTIONS" : "Current Connections",
+        "SECTION_HEADER_EDIT_USER"           : "Edit User",
+        "SECTION_HEADER_PERMISSIONS"         : "Permissions",
+        "SECTION_HEADER_USER_GROUPS"         : "Groups",
 
         "TEXT_CONFIRM_DELETE" : "Users cannot be restored after they have been deleted. Are you sure you want to delete this user?"
+
+    },
+
+    "MANAGE_USER_GROUP" : {
+
+        "ACTION_ACKNOWLEDGE"   : "@:APP.ACTION_ACKNOWLEDGE",
+        "ACTION_CANCEL"        : "@:APP.ACTION_CANCEL",
+        "ACTION_CLONE"         : "@:APP.ACTION_CLONE",
+        "ACTION_DELETE"        : "@:APP.ACTION_DELETE",
+        "ACTION_SAVE"          : "@:APP.ACTION_SAVE",
+
+        "DIALOG_HEADER_CONFIRM_DELETE" : "Delete Group",
+        "DIALOG_HEADER_ERROR"          : "@:APP.DIALOG_HEADER_ERROR",
+
+        "FIELD_HEADER_ADMINISTER_SYSTEM"             : "@:MANAGE_USER.FIELD_HEADER_ADMINISTER_SYSTEM",
+        "FIELD_HEADER_CHANGE_OWN_PASSWORD"           : "@:MANAGE_USER.FIELD_HEADER_CHANGE_OWN_PASSWORD",
+        "FIELD_HEADER_CREATE_NEW_USERS"              : "@:MANAGE_USER.FIELD_HEADER_CREATE_NEW_USERS",
+        "FIELD_HEADER_CREATE_NEW_USER_GROUPS"        : "@:MANAGE_USER.FIELD_HEADER_CREATE_NEW_USER_GROUPS",
+        "FIELD_HEADER_CREATE_NEW_CONNECTIONS"        : "@:MANAGE_USER.FIELD_HEADER_CREATE_NEW_CONNECTIONS",
+        "FIELD_HEADER_CREATE_NEW_CONNECTION_GROUPS"  : "@:MANAGE_USER.FIELD_HEADER_CREATE_NEW_CONNECTION_GROUPS",
+        "FIELD_HEADER_CREATE_NEW_SHARING_PROFILES"   : "@:MANAGE_USER.FIELD_HEADER_CREATE_NEW_SHARING_PROFILES",
+        "FIELD_HEADER_USER_GROUP_NAME"               : "Group name:",
+
+        "FIELD_PLACEHOLDER_FILTER" : "@:APP.FIELD_PLACEHOLDER_FILTER",
+
+        "HELP_NO_USER_GROUPS"        : "This group does not currently belong to any groups. Expand this section to add groups.",
+        "HELP_NO_MEMBER_USER_GROUPS" : "This group does not currently contain any groups. Expand this section to add groups.",
+        "HELP_NO_MEMBER_USERS"       : "This group does not currently contain any users. Expand this section to add users.",
+
+        "INFO_READ_ONLY"                : "Sorry, but this group cannot be edited.",
+        "INFO_NO_USER_GROUPS_AVAILABLE" : "@:MANAGE_USER.INFO_NO_USER_GROUPS_AVAILABLE",
+        "INFO_NO_USERS_AVAILABLE"       : "No users available.",
+
+        "SECTION_HEADER_ALL_CONNECTIONS"     : "@:MANAGE_USER.SECTION_HEADER_ALL_CONNECTIONS",
+        "SECTION_HEADER_CONNECTIONS"         : "@:MANAGE_USER.SECTION_HEADER_CONNECTIONS",
+        "SECTION_HEADER_CURRENT_CONNECTIONS" : "@:MANAGE_USER.SECTION_HEADER_CURRENT_CONNECTIONS",
+        "SECTION_HEADER_EDIT_USER_GROUP"     : "Edit Group",
+        "SECTION_HEADER_MEMBER_USERS"        : "Member Users",
+        "SECTION_HEADER_MEMBER_USER_GROUPS"  : "Member Groups",
+        "SECTION_HEADER_PERMISSIONS"         : "@:MANAGE_USER.SECTION_HEADER_PERMISSIONS",
+        "SECTION_HEADER_USER_GROUPS"         : "Parent Groups",
+
+        "TEXT_CONFIRM_DELETE" : "Groups cannot be restored after they have been deleted. Are you sure you want to delete this group?"
 
     },
     
@@ -323,6 +375,7 @@
         "FIELD_HEADER_DISABLE_AUTH"    : "Disable authentication:",
         "FIELD_HEADER_DOMAIN"          : "Domain:",
         "FIELD_HEADER_DPI"             : "Resolution (DPI):",
+        "FIELD_HEADER_DRIVE_NAME"      : "Drive name:",
         "FIELD_HEADER_DRIVE_PATH"      : "Drive path:",
         "FIELD_HEADER_ENABLE_AUDIO_INPUT"         : "Enable audio input (microphone):",
         "FIELD_HEADER_ENABLE_DESKTOP_COMPOSITION" : "Enable desktop composition (Aero):",
@@ -349,6 +402,7 @@
         "FIELD_HEADER_LOAD_BALANCE_INFO" : "Load balance info/cookie:",
         "FIELD_HEADER_PASSWORD"        : "Password:",
         "FIELD_HEADER_PORT"            : "Port:",
+        "FIELD_HEADER_PRINTER_NAME"    : "Redirected printer name:",
         "FIELD_HEADER_PRECONNECTION_BLOB" : "Preconnection BLOB (VM ID):",
         "FIELD_HEADER_PRECONNECTION_ID"   : "RDP source ID:",
         "FIELD_HEADER_READ_ONLY"      : "Read-only:",
@@ -364,6 +418,7 @@
         "FIELD_HEADER_SECURITY"        : "Security mode:",
         "FIELD_HEADER_SERVER_LAYOUT"   : "Keyboard layout:",
         "FIELD_HEADER_SFTP_DIRECTORY"             : "Default upload directory:",
+        "FIELD_HEADER_SFTP_HOST_KEY"              : "Public host key (Base64):",
         "FIELD_HEADER_SFTP_HOSTNAME"              : "Hostname:",
         "FIELD_HEADER_SFTP_SERVER_ALIVE_INTERVAL" : "SFTP keepalive interval:",
         "FIELD_HEADER_SFTP_PASSPHRASE"            : "Passphrase:",
@@ -430,16 +485,17 @@
         "FIELD_HEADER_COMMAND"      : "Execute command:",
         "FIELD_HEADER_CREATE_RECORDING_PATH" : "Automatically create recording path:",
         "FIELD_HEADER_CREATE_TYPESCRIPT_PATH" : "Automatically create typescript path:",
-        "FIELD_HEADER_FONT_NAME"   : "Font name:",
-        "FIELD_HEADER_FONT_SIZE"   : "Font size:",
-        "FIELD_HEADER_ENABLE_SFTP" : "Enable SFTP:",
-        "FIELD_HEADER_HOSTNAME"    : "Hostname:",
-        "FIELD_HEADER_USERNAME"    : "Username:",
-        "FIELD_HEADER_PASSWORD"    : "Password:",
-        "FIELD_HEADER_PASSPHRASE"  : "Passphrase:",
-        "FIELD_HEADER_PORT"        : "Port:",
-        "FIELD_HEADER_PRIVATE_KEY" : "Private key:",
-        "FIELD_HEADER_READ_ONLY"   : "Read-only:",
+        "FIELD_HEADER_FONT_NAME"     : "Font name:",
+        "FIELD_HEADER_FONT_SIZE"     : "Font size:",
+        "FIELD_HEADER_ENABLE_SFTP"   : "Enable SFTP:",
+        "FIELD_HEADER_HOST_KEY"      : "Public host key (Base64):",
+        "FIELD_HEADER_HOSTNAME"      : "Hostname:",
+        "FIELD_HEADER_USERNAME"      : "Username:",
+        "FIELD_HEADER_PASSWORD"      : "Password:",
+        "FIELD_HEADER_PASSPHRASE"    : "Passphrase:",
+        "FIELD_HEADER_PORT"          : "Port:",
+        "FIELD_HEADER_PRIVATE_KEY"   : "Private key:",
+        "FIELD_HEADER_READ_ONLY"     : "Read-only:",
         "FIELD_HEADER_RECORDING_EXCLUDE_MOUSE"  : "Exclude mouse:",
         "FIELD_HEADER_RECORDING_EXCLUDE_OUTPUT" : "Exclude graphics/streams:",
         "FIELD_HEADER_RECORDING_INCLUDE_KEYS"   : "Include key events:",
@@ -447,6 +503,7 @@
         "FIELD_HEADER_RECORDING_PATH" : "Recording path:",
         "FIELD_HEADER_SERVER_ALIVE_INTERVAL" : "Server keepalive interval:",
         "FIELD_HEADER_SFTP_ROOT_DIRECTORY"   : "File browser root directory:",
+        "FIELD_HEADER_TERMINAL_TYPE"   : "Terminal type:",
         "FIELD_HEADER_TYPESCRIPT_NAME" : "Typescript name:",
         "FIELD_HEADER_TYPESCRIPT_PATH" : "Typescript path:",
 
@@ -475,6 +532,14 @@
         "FIELD_OPTION_FONT_SIZE_72"    : "72",
         "FIELD_OPTION_FONT_SIZE_96"    : "96",
         "FIELD_OPTION_FONT_SIZE_EMPTY" : "",
+
+        "FIELD_OPTION_TERMINAL_TYPE_ANSI"           : "ansi",
+        "FIELD_OPTION_TERMINAL_TYPE_EMPTY"          : "",
+        "FIELD_OPTION_TERMINAL_TYPE_LINUX"          : "linux",
+        "FIELD_OPTION_TERMINAL_TYPE_VT100"          : "vt100",
+        "FIELD_OPTION_TERMINAL_TYPE_VT220"          : "vt220",
+        "FIELD_OPTION_TERMINAL_TYPE_XTERM"          : "xterm",
+        "FIELD_OPTION_TERMINAL_TYPE_XTERM_256COLOR" : "xterm-256color",
 
         "NAME" : "SSH",
 
@@ -498,7 +563,10 @@
         "FIELD_HEADER_FONT_NAME"      : "Font name:",
         "FIELD_HEADER_FONT_SIZE"      : "Font size:",
         "FIELD_HEADER_HOSTNAME"       : "Hostname:",
+        "FIELD_HEADER_LOGIN_FAILURE_REGEX" : "Login failure regular expression:",
+        "FIELD_HEADER_LOGIN_SUCCESS_REGEX" : "Login success regular expression:",
         "FIELD_HEADER_USERNAME"       : "Username:",
+        "FIELD_HEADER_USERNAME_REGEX" : "Username regular expression:",
         "FIELD_HEADER_PASSWORD"       : "Password:",
         "FIELD_HEADER_PASSWORD_REGEX" : "Password regular expression:",
         "FIELD_HEADER_PORT"           : "Port:",
@@ -508,6 +576,7 @@
         "FIELD_HEADER_RECORDING_INCLUDE_KEYS"   : "Include key events:",
         "FIELD_HEADER_RECORDING_NAME" : "Recording name:",
         "FIELD_HEADER_RECORDING_PATH" : "Recording path:",
+        "FIELD_HEADER_TERMINAL_TYPE"   : "Terminal type:",
         "FIELD_HEADER_TYPESCRIPT_NAME" : "Typescript name:",
         "FIELD_HEADER_TYPESCRIPT_PATH" : "Typescript path:",
 
@@ -536,6 +605,14 @@
         "FIELD_OPTION_FONT_SIZE_72"    : "72",
         "FIELD_OPTION_FONT_SIZE_96"    : "96",
         "FIELD_OPTION_FONT_SIZE_EMPTY" : "",
+
+        "FIELD_OPTION_TERMINAL_TYPE_ANSI"           : "ansi",
+        "FIELD_OPTION_TERMINAL_TYPE_EMPTY"          : "",
+        "FIELD_OPTION_TERMINAL_TYPE_LINUX"          : "linux",
+        "FIELD_OPTION_TERMINAL_TYPE_VT100"          : "vt100",
+        "FIELD_OPTION_TERMINAL_TYPE_VT220"          : "vt220",
+        "FIELD_OPTION_TERMINAL_TYPE_XTERM"          : "xterm",
+        "FIELD_OPTION_TERMINAL_TYPE_XTERM_256COLOR" : "xterm-256color",
 
         "NAME" : "Telnet",
 
@@ -569,6 +646,7 @@
         "FIELD_HEADER_RECORDING_NAME" : "Recording name:",
         "FIELD_HEADER_RECORDING_PATH" : "Recording path:",
         "FIELD_HEADER_SFTP_DIRECTORY"             : "Default upload directory:",
+        "FIELD_HEADER_SFTP_HOST_KEY"              : "Public host key (Base64):",
         "FIELD_HEADER_SFTP_HOSTNAME"              : "Hostname:",
         "FIELD_HEADER_SFTP_SERVER_ALIVE_INTERVAL" : "SFTP keepalive interval:",
         "FIELD_HEADER_SFTP_PASSPHRASE"            : "Passphrase:",
@@ -714,11 +792,32 @@
 
         "SECTION_HEADER_USERS"       : "Users",
 
+        "TABLE_HEADER_FULL_NAME"   : "Full name",
         "TABLE_HEADER_LAST_ACTIVE" : "Last active",
+        "TABLE_HEADER_ORGANIZATION" : "Organization",
         "TABLE_HEADER_USERNAME"    : "Username"
 
     },
-    
+
+    "SETTINGS_USER_GROUPS" : {
+
+        "ACTION_ACKNOWLEDGE"    : "@:APP.ACTION_ACKNOWLEDGE",
+        "ACTION_NEW_USER_GROUP" : "New Group",
+
+        "DIALOG_HEADER_ERROR" : "@:APP.DIALOG_HEADER_ERROR",
+
+        "FIELD_PLACEHOLDER_FILTER" : "@:APP.FIELD_PLACEHOLDER_FILTER",
+
+        "FORMAT_DATE" : "@:APP.FORMAT_DATE_TIME_PRECISE",
+
+        "HELP_USER_GROUPS" : "Click or tap on a group below to manage that group. Depending on your access level, groups can be added and deleted, and their member users and groups can be changed.",
+
+        "SECTION_HEADER_USER_GROUPS" : "Groups",
+
+        "TABLE_HEADER_USER_GROUP_NAME" : "Group Name"
+
+    },
+
     "SETTINGS_SESSIONS" : {
         
         "ACTION_ACKNOWLEDGE" : "@:APP.ACTION_ACKNOWLEDGE",
@@ -732,7 +831,7 @@
         
         "FORMAT_STARTDATE" : "@:APP.FORMAT_DATE_TIME_PRECISE",
 
-        "HELP_SESSIONS" : "All currently-active Guacamole sessions are listed here. If you wish to kill one or more sessions, check the box next to those sessions and click \"Kill Sessions\". Killing a session will immediately disconnect the user from the associated connection.",
+        "HELP_SESSIONS" : "This page will be populated with currently-active connections. The connections listed and the ability to kill those connections is dependent upon your access level. If you wish to kill one or more sessions, check the box next to those sessions and click \"Kill Sessions\". Killing a session will immediately disconnect the user from the associated connection.",
         
         "INFO_NO_SESSIONS" : "No active sessions",
 
@@ -764,6 +863,7 @@
         "ACTION_MANAGE_SESSIONS"    : "@:APP.ACTION_MANAGE_SESSIONS",
         "ACTION_MANAGE_SETTINGS"    : "@:APP.ACTION_MANAGE_SETTINGS",
         "ACTION_MANAGE_USERS"       : "@:APP.ACTION_MANAGE_USERS",
+        "ACTION_MANAGE_USER_GROUPS" : "@:APP.ACTION_MANAGE_USER_GROUPS",
         "ACTION_NAVIGATE_HOME"      : "@:APP.ACTION_NAVIGATE_HOME",
         "ACTION_VIEW_HISTORY"       : "@:APP.ACTION_VIEW_HISTORY"
 

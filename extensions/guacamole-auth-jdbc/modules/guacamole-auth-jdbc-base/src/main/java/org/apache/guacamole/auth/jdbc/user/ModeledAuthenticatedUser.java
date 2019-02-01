@@ -76,7 +76,7 @@ public class ModeledAuthenticatedUser extends RemoteAuthenticatedUser {
      */
     public ModeledAuthenticatedUser(AuthenticatedUser authenticatedUser,
             AuthenticationProvider modelAuthenticationProvider, ModeledUser user) {
-        super(authenticatedUser.getAuthenticationProvider(), authenticatedUser.getCredentials());
+        super(authenticatedUser.getAuthenticationProvider(), authenticatedUser.getCredentials(), authenticatedUser.getEffectiveUserGroups());
         this.modelAuthenticationProvider = modelAuthenticationProvider;
         this.user = user;
     }
@@ -93,12 +93,12 @@ public class ModeledAuthenticatedUser extends RemoteAuthenticatedUser {
      *     A ModeledUser object which is backed by the data associated with
      *     this user in the database.
      *
-     * @param credentials 
+     * @param credentials
      *     The credentials given by the user when they authenticated.
      */
     public ModeledAuthenticatedUser(AuthenticationProvider authenticationProvider,
             ModeledUser user, Credentials credentials) {
-        super(authenticationProvider, credentials);
+        super(authenticationProvider, credentials, user.getEffectiveUserGroups());
         this.modelAuthenticationProvider = authenticationProvider;
         this.user = user;
     }
@@ -107,7 +107,7 @@ public class ModeledAuthenticatedUser extends RemoteAuthenticatedUser {
      * Returns a ModeledUser object which is backed by the data associated with
      * this user within the database.
      *
-     * @return 
+     * @return
      *     A ModeledUser object which is backed by the data associated with
      *     this user in the database.
      */
@@ -167,11 +167,6 @@ public class ModeledAuthenticatedUser extends RemoteAuthenticatedUser {
     @Override
     public void setIdentifier(String identifier) {
         user.setIdentifier(identifier);
-    }
-
-    @Override
-    public Set<String> getEffectiveUserGroups() {
-        return Collections.<String>emptySet();
     }
 
 }

@@ -28,7 +28,19 @@
                     "type"  : "PASSWORD"
                 },
                 {
+                    "name"  : "username-regex",
+                    "type"  : "TEXT"
+                },
+                {
                     "name"  : "password-regex",
+                    "type"  : "TEXT"
+                },
+                {
+                    "name"  : "login-success-regex",
+                    "type"  : "TEXT"
+                },
+                {
+                    "name"  : "login-failure-regex",
                     "type"  : "TEXT"
                 }
             ]
@@ -39,7 +51,8 @@
             "fields" : [
                 {
                     "name"  : "color-scheme",
-                    "type"  : "TEXT"
+                    "type"  : "TEXT",
+                    "options" : [ "", "black-white", "gray-black", "green-black", "white-black" ]
                 },
                 {
                     "name"  : "font-name",
@@ -69,7 +82,7 @@
                 {
                     "name"  : "terminal-type",
                     "type"    : "ENUM",
-                    "options" : [ "xterm", "xterm-256color", "vt220", "vt100", "ansi", "linux" ]
+                    "options" : [ "", "xterm", "xterm-256color", "vt220", "vt100", "ansi", "linux" ]
                 }
             ]
         },

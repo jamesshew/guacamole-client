@@ -25,8 +25,9 @@ angular.module('rest').factory('requestService', ['$injector',
         function requestService($injector) {
 
     // Required services
-    var $http = $injector.get('$http');
-    var $log  = $injector.get('$log');
+    var $http      = $injector.get('$http');
+    var $log       = $injector.get('$log');
+    var $rootScope = $injector.get('$rootScope');
 
     // Required types
     var Error = $injector.get('Error');
@@ -92,6 +93,33 @@ angular.module('rest').factory('requestService', ['$injector',
     };
 
     /**
+     * Creates a promise error callback which resolves the promise with the
+     * given default value only if the @link{Error} in the original rejection
+     * is a NOT_FOUND error. All other errors are passed through and must be
+     * handled as yet more rejections.
+     *
+     * @param {*} value
+     *     The default value to use to resolve the promise if the promise is
+     *     rejected with a NOT_FOUND error.
+     *
+     * @returns {Function}
+     *     A function which can be provided as the error callback for a
+     *     promise.
+     */
+    service.defaultValue = function defaultValue(value) {
+        return service.createErrorCallback(function resolveIfNotFound(error) {
+
+            // Return default value only if not found
+            if (error.type === Error.Type.NOT_FOUND)
+                return value;
+
+            // Reject promise with original error otherwise
+            throw error;
+
+        });
+    };
+
+    /**
      * Promise error callback which ignores all rejections due to REST errors,
      * but logs all other rejections, such as those due to JavaScript errors.
      * This callback should be used in favor of angular.noop in cases where
@@ -113,6 +141,21 @@ angular.module('rest').factory('requestService', ['$injector',
      */
     service.WARN = service.createErrorCallback(function warnRequestFailed(error) {
         $log.warn(error.type, error.message || error.translatableMessage);
+    });
+
+    /**
+     * Promise error callback which replaces the content of the page with a
+     * generic error message warning that the page could not be displayed. All
+     * rejections are logged to the browser console as errors. This callback
+     * should be used in favor of @link{WARN} if REST errors will result in the
+     * page being unusable.
+     *
+     * @constant
+     * @type Function
+     */
+    service.DIE = service.createErrorCallback(function fatalPageError(error) {
+        $rootScope.$broadcast('guacFatalPageError', error);
+        $log.error(error.type, error.message || error.translatableMessage);
     });
 
     return service;
